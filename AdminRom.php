@@ -4,6 +4,14 @@ $filbane = 'rom_data.json';
 
 
 //kommentar 
+function lesRomDat1a($filbane) {
+    if (file_exists($filbane)) {
+        $data = file_get_contents($filbane);
+        return json_decode($data, true); // Returner som en assosiativ array
+    } else {
+        return []; // Returner en tom array hvis filen ikke finnes
+    }
+}
 
 // Funksjon for å lese romdata fra filen
 function lesRomData($filbane) {
